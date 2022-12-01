@@ -1,5 +1,5 @@
 {
-  "name": "social-media-api",
+  "name": "node-crud-mongo",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
