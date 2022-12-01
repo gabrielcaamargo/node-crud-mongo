@@ -54,6 +54,26 @@ class UserController {
   }
   
 
+  async updateUser(request: Request, response: Response) {
+    try {
+      const { id } = request.params;
+      const { name, username, email } = request.body;
+
+      const user = await User.findByIdAndUpdate(id, {
+        name, 
+        username, 
+        email
+      });
+
+
+
+      response.status(201).json({'msg': 'User updated'});
+    } catch {
+      return response.status(400).json({'error': 'Unexpected server error'});
+    }
+  }
+
+
   async deleteUser(request: Request, response: Response) {
     try {
       const { id } = request.params;
